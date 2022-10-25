@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    background-color: #82ccdd;
+    display: flex;
+}
+
+h1 {
+    color: #0c2461;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 2px 2px 5px #b8e994;
+    position: absolute;
+    font-size: 3rem;
+}
+
+button {
+    position:relative;
+    top: 70px;
+    left: 70px;
+    background-color: #b8e994;
+    border: 3px solid #6a89cc;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #0c2461;
+    font-size: 20px;
+    width:120px;
+    height:40px;
+    
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.game-board {
+    width: 640px;
+    height: 640px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid #6a89cc;
+    margin: auto;
+    /* perspective: 1000px; */
+}
+
+.memory-card {
+    width: calc(20% - 6px);
+    height: calc(25% - 6px);
+    margin: 3px;
+    position: relative;
+    perspective: 1000px;
+    /* transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .6s; */
+}
+
+.memory-card:hover {
+    cursor: pointer;
+}
+/* .memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+    transform: rotateY(180deg);
+} */
+
+.memory-card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.memory-card-inner.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    pointer-events: none;
+}
+
+/* .front-face, .back-face, .memory-card-front, .memory-card-back {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    pointer-events: none;
+} */
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+/* .memory-card-front {
+    transform: rotateY(180deg);
+} */
